@@ -138,7 +138,7 @@ Topics covered:
 **Goal:** Handle complex real-world scenarios
 
 📄 File:  
-- [Advanced JPA Concepts – included in internals & optimization phases]
+- [Advanced JPA Concepts – included in internals & optimization phases](AdvancedJPAConcepts.md)
 
 Topics covered:
 - Inheritance strategies  
