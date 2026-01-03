@@ -425,13 +425,9 @@ If you answer with:
 
 ---
 
-## 🚀 If You Want Next
-
-I can:
+Next:
 
 * Create **mock interview Q&A (50+ questions)**
 * Provide **system design JPA scenarios**
 * Build **debugging exercises**
 * Share **real production war stories**
-
-Just tell me 👍
