@@ -16,7 +16,7 @@ Each phase builds on the previous one. Follow them **in order** for best results
 **Goal:** Understand what JPA is and how it works internally
 
 📄 File:  
-- [JPAFundamentals.md](JPA/JPAFundamentals.md)
+- [JPAFundamentals.md](JPAFundamentals.md)
 
 Topics covered:
 - JPA vs Hibernate  
@@ -32,7 +32,7 @@ Topics covered:
 **Goal:** Master entity annotations and table mappings
 
 📄 File:  
-- [EntityMappings.md](JPA/EntityMappings.md)
+- [EntityMappings.md](EntityMappings.md)
 
 Topics covered:
 - `@Entity`, `@Table`, `@Id`, `@GeneratedValue`  
@@ -46,7 +46,7 @@ Topics covered:
 **Goal:** Avoid the #1 cause of JPA bugs
 
 📄 File:  
-- [RelationshipsAndAssociations.md](JPA/RelationshipsAndAssociations.md)
+- [RelationshipsAndAssociations.md](RelationshipsAndAssociations.md)
 
 Topics covered:
 - OneToOne, OneToMany, ManyToOne, ManyToMany  
@@ -61,7 +61,7 @@ Topics covered:
 **Goal:** Understand JPA’s internal magic
 
 📄 File:  
-- [PersistenceContextAndEntityLifecycle.md](JPA/PersistenceContextAndEntityLifecycle.md)
+- [PersistenceContextAndEntityLifecycle.md](PersistenceContextAndEntityLifecycle.md)
 
 Topics covered:
 - Entity states (Transient, Managed, Detached, Removed)  
@@ -76,7 +76,7 @@ Topics covered:
 **Goal:** Control data consistency correctly
 
 📄 File:  
-- [TransactionsAndSpringIntegration.md](JPA/TransactionsAndSpringIntegration.md)
+- [TransactionsAndSpringIntegration.md](TransactionsAndSpringIntegration.md)
 
 Topics covered:
 - ACID principles  
@@ -91,7 +91,7 @@ Topics covered:
 **Goal:** Query data efficiently
 
 📄 File:  
-- [JPQLAndCriteriaAPIAndNativeQueries.md](JPA/JPQLAndCriteriaAPIAndNativeQueries.md)
+- [JPQLAndCriteriaAPIAndNativeQueries.md](JPQLAndCriteriaAPIAndNativeQueries.md)
 
 Topics covered:
 - JPQL select, join, fetch join  
@@ -106,7 +106,7 @@ Topics covered:
 **Goal:** Use Spring Data the right way
 
 📄 File:  
-- [SpringDataJPAMastery.md](JPA/SpringDataJPAMastery.md)
+- [SpringDataJPAMastery.md](SpringDataJPAMastery.md)
 
 Topics covered:
 - JpaRepository internals  
@@ -122,7 +122,7 @@ Topics covered:
 **Goal:** Write production-ready JPA code
 
 📄 File:  
-- [PerformanceAndOptimization.md](JPA/PerformanceAndOptimization.md)
+- [PerformanceAndOptimization.md](PerformanceAndOptimization.md)
 
 Topics covered:
 - N+1 problem (deep dive)  
@@ -153,7 +153,7 @@ Topics covered:
 **Goal:** Write clean, testable architecture
 
 📄 File:  
-- [Testing&BestPractices.md](JPA/Testing&BestPractices.md)
+- [Testing&BestPractices.md](Testing&BestPractices.md)
 
 Topics covered:
 - Repository testing  
@@ -168,7 +168,7 @@ Topics covered:
 **Goal:** Truly master JPA
 
 📄 File:  
-- [JPAHibernateInternals.md](JPA/JPAHibernateInternals.md)
+- [JPAHibernateInternals.md](JPAHibernateInternals.md)
 
 Topics covered:
 - Hibernate internals  
