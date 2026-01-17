@@ -301,3 +301,139 @@ Atomic / volatile
 
 ---
 
+# **💡 Java Multi-threading Interview Cheat Sheet (1 Page)**
+
+```
++--------------------------------------------------------------------------------+
+|                              JAVA MULTI-THREADING                               |
++--------------------------------------------------------------------------------+
+
+1️⃣ THREAD TYPES
+──────────────────────────────────────────────────────
+Traditional Thread (OS)      Virtual Thread (JVM, Loom)
+- Heavyweight (~1MB stack)    - Lightweight (~KB stack)
+- CPU-bound tasks             - Millions of I/O-bound tasks
+- start()/run()               - start()/run(), Executor support
+- Daemon vs User threads      - Compatible with ThreadLocal
+
+Mnemonic: **TV – Traditional vs Virtual**
+
+──────────────────────────────────────────────────────
+
+2️⃣ THREAD LOCAL / SHARED DATA
+──────────────────────────────────────────────────────
+ThreadLocal             Atomic & volatile
+- Per-thread data       - Atomic: lock-free updates
+- Safe without locks    - volatile: visibility only
+- Avoids synchronization  - CAS ensures atomicity
+
+Mnemonic: **LV – Local vs Visibility**
+
+──────────────────────────────────────────────────────
+
+3️⃣ SYNCHRONIZATION / LOCKS
+──────────────────────────────────────────────────────
+synchronized           ReentrantLock / ReadWriteLock
+CountDownLatch         CyclicBarrier / Phaser
+Semaphore              Exchanger
+
+Mnemonic: **SL-CP-SE** → Simple Locks, Coordination Primitives, Semaphores/Exchanger
+
+──────────────────────────────────────────────────────
+
+4️⃣ EXECUTORS & THREAD POOLS
+──────────────────────────────────────────────────────
+ExecutorService        ThreadPool Types
+- FixedThreadPool       - Fixed / Cached / Single / Scheduled
+- VirtualThreadPool     - VirtualThreadPerTaskExecutor
+- shutdown() / shutdownNow()
+
+Mnemonic: **F-C-S-V** → Fixed, Cached, Single, Virtual
+
+──────────────────────────────────────────────────────
+
+5️⃣ ASYNC TASKS
+──────────────────────────────────────────────────────
+Future                  CompletableFuture
+- Blocks on get()       - Non-blocking pipelines
+- Simple async          - thenApply / thenAccept / thenCombine
+                        - allOf / anyOf
+                        - Exception handling: exceptionally / handle
+
+Mnemonic: **F-C → Flow Control**
+
+──────────────────────────────────────────────────────
+
+6️⃣ CONCURRENT COLLECTIONS
+──────────────────────────────────────────────────────
+ConcurrentHashMap        CopyOnWriteArrayList
+BlockingQueue            ConcurrentLinkedQueue
+- Lock-free or fine-grained locking
+- Thread-safe
+- Useful in producer-consumer scenarios
+
+Mnemonic: **C-C-B-C → Map, List, BlockingQueue, Queue**
+
+──────────────────────────────────────────────────────
+
+7️⃣ DEADLOCK & RACE CONDITIONS
+──────────────────────────────────────────────────────
+- Race Condition: multiple threads update shared data without sync
+- Deadlock: threads waiting forever for each other’s locks
+- Livelock: threads active but no progress
+- Starvation: low-priority threads never run
+- Prevention: lock ordering, timeout, avoid nested locks
+
+Mnemonic: **DRLS → Deadlocks, Race, Livelock, Starvation**
+
+──────────────────────────────────────────────────────
+
+8️⃣ MODERN JAVA 21+ CONCURRENCY
+──────────────────────────────────────────────────────
+- Virtual Threads: high-concurrency I/O
+- Structured Concurrency: group tasks, fail/complete together
+- ThreadLocal works with virtual threads (call remove())
+- Combine with ExecutorService for scalability
+
+Mnemonic: **V-S-T-E → Virtual, Structured, ThreadLocal, Executor**
+
+──────────────────────────────────────────────────────
+
+⚡ QUICK MEMORY / STACK / BLOCKING GUIDE
+──────────────────────────────────────────────────────
+Layer                Stack      Blocking        Scalability
+Thread               ~1MB       Blocks OS      Low (100s)
+Virtual Thread       ~KB        Blocks VT only High (millions)
+Atomic / volatile    Shared     Lock-free      High
+Locks / Synchronizers Shared     May block      Medium
+ExecutorService      Shared     Non-blocking   High
+Future               Shared     Blocks on get  Medium
+CompletableFuture    Shared     Non-blocking   High
+Concurrent Collections Shared   Lock-free/fine  High
+
+──────────────────────────────────────────────────────
+🔑 KEY MNEMONICS / TIPS
+- TV → Traditional vs Virtual
+- LV → Local vs Visibility
+- SL-CP-SE → Simple Locks, Coordination Primitives, Semaphore/Exchanger
+- F-C-S-V → Fixed, Cached, Single, Virtual Thread Pools
+- F-C → Future vs CompletableFuture Flow
+- C-C-B-C → Map, List, BlockingQueue, Queue
+- DRLS → Deadlock, Race, Livelock, Starvation
+- V-S-T-E → Virtual Threads, Structured Concurrency, ThreadLocal, Executor
+```
+
+---
+
+This **one-page visual cheat sheet** covers:
+
+* All **50 interview questions** with short answers
+* Memory/stack usage & blocking behavior
+* Mnemonics for quick recall
+* Thread types, synchronization, async, concurrent collections, deadlock/race issues
+* Modern Java 21+ concurrency
+
+---
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/f6db83af-29f8-4c21-b471-5b80cb67fce3" />
+
