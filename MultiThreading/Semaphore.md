@@ -103,3 +103,130 @@ Thread-6 got a permit and is accessing the resource.
 - Supports **fairness policy** to avoid starvation (`new Semaphore(3, true)`).  
 
 ---
+बिलकुल! चलिए step by step समझते हैं **Binary Semaphore** और **Mutex**, और उनके बीच का difference।
+
+---
+
+## 1️⃣ Binary Semaphore क्या है?
+
+**Definition:**
+A **Binary Semaphore** is a semaphore with only **1 permit**, which means **only one thread can access the shared resource at a time**.
+
+* Think of it as a **light switch**:
+
+  * `ON` → resource occupied
+  * `OFF` → resource free
+
+**Key Points:**
+
+* Permits = 1
+* Used to enforce **mutual exclusion** (only one thread at a time).
+* Can be used with **fair or non-fair scheduling**.
+
+---
+
+### Example in Java
+
+```java
+import java.util.concurrent.*;
+
+public class BinarySemaphoreExample {
+    public static void main(String[] args) {
+        Semaphore binarySemaphore = new Semaphore(1); // 1 permit = binary semaphore
+
+        Runnable task = () -> {
+            String threadName = Thread.currentThread().getName();
+            try {
+                System.out.println(threadName + " is waiting for the resource.");
+                binarySemaphore.acquire(); // acquire the single permit
+                System.out.println(threadName + " got the resource.");
+                Thread.sleep(2000); // simulate resource usage
+                System.out.println(threadName + " is releasing the resource.");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                binarySemaphore.release(); // release permit
+            }
+        };
+
+        for (int i = 1; i <= 3; i++) {
+            new Thread(task, "Thread-" + i).start();
+        }
+    }
+}
+```
+
+**Observation:**
+
+* Only **one thread** access the resource
+* Other threads will **wait**
+
+---
+
+## 2️⃣ Mutex
+
+**Definition:**
+A **Mutex (Mutual Exclusion)** is a **locking mechanism** that ensures **only one thread at a time** can access a critical section.
+
+* Binary Semaphore = Semaphore with 1 permit → **behaves like a mutex**
+* Key differences:
+
+  * Mutex is **owned by the thread** that locks it. Only that thread can unlock it.
+  * Binary Semaphore **does not have ownership**. Any thread can release it.
+
+---
+
+### Mutex vs Binary Semaphore
+
+| Feature   | Binary Semaphore                              | Mutex                                          |
+| --------- | --------------------------------------------- | ---------------------------------------------- |
+| Permits   | 1                                             | 1                                              |
+| Ownership | No thread ownership; any thread can release   | Owned by locking thread; only owner can unlock |
+| Use Case  | Can be used for signaling or mutual exclusion | Only for mutual exclusion (critical section)   |
+| Example   | `Semaphore s = new Semaphore(1)`              | `ReentrantLock lock = new ReentrantLock()`     |
+
+---
+
+### Mutex in Java Example
+
+```java
+import java.util.concurrent.locks.*;
+
+public class MutexExample {
+    public static void main(String[] args) {
+        ReentrantLock mutex = new ReentrantLock(); // acts as mutex
+
+        Runnable task = () -> {
+            String threadName = Thread.currentThread().getName();
+            try {
+                mutex.lock(); // acquire the lock
+                System.out.println(threadName + " entered critical section.");
+                Thread.sleep(2000);
+                System.out.println(threadName + " leaving critical section.");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                mutex.unlock(); // release lock
+            }
+        };
+
+        for (int i = 1; i <= 3; i++) {
+            new Thread(task, "Thread-" + i).start();
+        }
+    }
+}
+```
+
+**Observation:**
+
+* Only **one thread** enters critical section at a time.
+* Ensures strict **mutual exclusion**.
+
+---
+
+💡 **Key Takeaways:**
+
+1. **Binary Semaphore = 1 permit semaphore → can be used as mutex.**
+2. **Mutex = thread-owned lock → only owner can unlock.**
+3. Use **Binary Semaphore** for signaling + mutual exclusion, **Mutex** strictly for critical section protection.
+
