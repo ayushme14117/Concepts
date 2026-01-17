@@ -98,7 +98,7 @@
 
 ---
 
-## **10️⃣ Low-level / Optional (Low Priority)**
+## **1️⃣0️⃣ Low-level / Optional (Low Priority)**
 
 | Concept                | Use Case                                     | Benefit                           | Example                         |
 | ---------------------- | -------------------------------------------- | --------------------------------- | ------------------------------- |
@@ -108,7 +108,7 @@
 
 ---
 
-# **11️⃣ Cheat Sheet / Quick Selection Guide (Interview Ready)**
+# **1️⃣1️⃣ Cheat Sheet / Quick Selection Guide (Interview Ready)**
 
 | Requirement                   | Best Choice                             | Why                                |
 | ----------------------------- | --------------------------------------- | ---------------------------------- |
@@ -125,7 +125,7 @@
 
 ---
 
-# **12️⃣ Priority Summary for Interviews**
+# **1️⃣2️⃣ Priority Summary for Interviews**
 
 | Priority | Concepts                                                                                                            | Why Important                                                           |
 | -------- | ------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
@@ -135,7 +135,7 @@
 
 ---
 
-# **13️⃣ Visual Summary (Mental Map)**
+# **1️⃣3️⃣ Visual Summary (Mental Map)**
 
 ```
                 Java Concurrency
@@ -158,6 +158,99 @@ Reentrant ReadWrite Lock, Semaphore, Latch, Barrier
 Concurrent Collections
 Atomic / volatile
 ```
+**Short, crisp one-line definitions** 
+
+---
+
+### 1️⃣ Thread
+
+**Definition:** A thread is a lightweight unit of execution within a process that can run concurrently with other threads.
+
+### 2️⃣ Runnable Interface
+
+**Definition:** Runnable is a functional interface representing a task that can be executed by a thread.
+
+### 3️⃣ Thread Class
+
+**Definition:** Thread class represents a thread of execution and provides methods to create, control, and manage threads.
+
+### 4️⃣ start() vs run()
+
+**Definition:** `start()` creates a new thread and executes `run()`, whereas `run()` executes in the current thread without creating a new one.
+
+### 5️⃣ Thread Life Cycle
+
+**Definition:** The thread lifecycle defines the states a thread goes through: New, Runnable, Running, Waiting, Timed Waiting, and Terminated.
+
+### 6️⃣ Thread Priority
+
+**Definition:** Thread priority is a hint to the scheduler about the order in which threads should be executed.
+
+### 7️⃣ join() Method
+
+**Definition:** `join()` makes the current thread wait until the specified thread completes its execution.
+
+### 8️⃣ sleep() Method
+
+**Definition:** `sleep()` pauses the current thread for a specified time without releasing locks.
+
+### 9️⃣ yield() Method
+
+**Definition:** `yield()` hints the scheduler to pause the current thread and allow other threads of the same priority to execute.
+
+### 1️⃣0️⃣ Daemon Thread
+
+**Definition:** Daemon threads are background threads that terminate automatically when all user threads finish execution.
+
+### 1️⃣1️⃣ Synchronized Keyword
+
+**Definition:** `synchronized` ensures that only one thread can access a critical section of code at a time.
+
+### 1️⃣2️⃣ Locks (ReentrantLock)
+
+**Definition:** Lock is an explicit synchronization mechanism providing more flexibility than `synchronized`.
+
+### 1️⃣3️⃣ wait(), notify(), notifyAll()
+
+**Definition:** These methods enable inter-thread communication by making threads wait or notify other threads for a condition.
+
+### 1️⃣4️⃣ ThreadLocal
+
+**Definition:** ThreadLocal provides thread-specific variables, ensuring that each thread has its own independent copy.
+
+### 1️⃣5️⃣ Executor Framework
+
+**Definition:** Executor framework manages thread pools and task execution, decoupling task submission from thread management.
+
+### 1️⃣6️⃣ Callable & Future
+
+**Definition:** Callable allows threads to return a result, and Future retrieves that result asynchronously.
+
+### 1️⃣7️⃣ ForkJoinPool
+
+**Definition:** ForkJoinPool is a thread pool for parallel tasks using divide-and-conquer, supporting work-stealing.
+
+### 1️⃣8️⃣ BlockingQueue
+
+**Definition:** BlockingQueue is a thread-safe queue that blocks producer or consumer threads when the queue is full or empty.
+
+### 1️⃣9️⃣ Virtual Threads (Java 19+)
+
+**Definition:** Virtual threads are lightweight threads managed by JVM for scalable I/O-bound concurrency.
+
+### 2️⃣0️⃣ Atomic Classes (AtomicInteger, AtomicReference, etc.)
+
+**Definition:** Atomic classes provide lock-free thread-safe operations on single variables.
+
+### 2️⃣1️⃣ Volatile Keyword
+
+**Definition:** `volatile` ensures visibility of changes to variables across threads without locking.
+
+### 2️⃣2️⃣ Concurrent Collections
+
+**Definition:** Concurrent collections are thread-safe collection classes like `ConcurrentHashMap`, `CopyOnWriteArrayList`.
+
+---
 
 **Key takeaway:**
 
